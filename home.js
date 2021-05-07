@@ -165,18 +165,18 @@ export async function loadHomePage() {
     }
 
 // PEOPLE IN SPACE + ISS LOCATION
-    const astronauts = await axios({
-        method: 'get',
-        url: 'http://api.open-notify.org/astros.json',
-        withCredentials: false,
-    });
-    const $iss_people = $('#astronauts_list');
-    let people = astronauts.data["people"];
-    for (let i=0; i<people.length; i++) {
-        if (people[i]["craft"] == 'ISS') {
-            $iss_people.append(appendISSPeople(people[i]["name"]));
-        }
-    }
+    // const astronauts = await axios({
+    //     method: 'get',
+    //     url: 'http://api.open-notify.org/astros.json',
+    //     withCredentials: false,
+    // });
+    // const $iss_people = $('#astronauts_list');
+    // let people = astronauts.data["people"];
+    // for (let i=0; i<people.length; i++) {
+    //     if (people[i]["craft"] == 'ISS') {
+    //         $iss_people.append(appendISSPeople(people[i]["name"]));
+    //     }
+    // }
 
     const iss = await axios({
         method: 'get',
