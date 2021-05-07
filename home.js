@@ -213,11 +213,11 @@ for (let i=0; i<recent_dates.data.length; i++) {
 
     const iss = await axios({
         method: 'get',
-        url: 'http://api.open-notify.org/iss-now.json',
+        url: 'https://api.wheretheiss.at/v1/satellites/25544',
         withCredentials: false,
     });
     const $iss_pos = $('#iss_location');
-    $iss_pos.append(appendISSPosition(iss.data["iss_position"]));
+    $iss_pos.append(appendISSPosition(iss.data));
 
 
 };
