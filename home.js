@@ -70,7 +70,7 @@ export const recentEarthPic = function(pic) {
         <div class="flex-child">
             <img id="earthpic" src="${image_url}" alt="earthpic">
             <p id="coords">Taken on: ${date_taken}</p>
-            <p id="coords">Lat: ${lat},<br>Long: ${lon}</p>
+            <p id="coords">Lat: ${lat}°<br>Long: ${lon}°</p>
         </div>
     `
 };
