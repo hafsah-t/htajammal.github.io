@@ -114,6 +114,10 @@ export const appendISSPeople = function(person) {
     `
 };
 export const appendISSPosition = function(position) {
+    let long = position.longitude;
+    let lat =  position.latitude;
+    let lon_round = long.toFixed(2);
+    let lat_round = lat.toFixed(2);
     return `
         <table id="iss_table">
             <tr>
@@ -121,8 +125,9 @@ export const appendISSPosition = function(position) {
                 <th class="rover_header">Latitude</th>
             </tr>
             <tr>
-                <td>${position.longitude}</td>
-                <td>${position.latitude}</td>
+    let lon_round = long.toFixed(2);
+                <td>${lon_round}°</td>
+                <td>${lat_round}°</td>
             </tr>
         </table>
     `
