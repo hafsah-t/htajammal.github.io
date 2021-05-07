@@ -163,7 +163,40 @@ export async function loadHomePage() {
             appended++;
         }
     }
+// MAAS2 API
+const curiosity = await axios({
+    method: 'get',
+    url: 'https://api.maas2.apollorion.com/',
+    withCredentials: false,
+});
+const $rover = $('#rover_cont');
+$rover.prepend(curiosityRoverWeather(curiosity.data));
 
+// NASA EPIC
+const recent_dates = await axios({
+    method: 'get',
+    url: 'https://epic.gsfc.nasa.gov/api/natural/all?api_key=0Iqc0NH37zWuGrCjtWhnCqO3U5fOOLNWA5bFFHyV',
+    withCredentials: false,
+});
+
+let count = 0;
+for (let i=0; i<recent_dates.data.length; i++) {
+    if (count == 4) {
+        break;
+    }
+    let most_recent_date = recent_dates.data[i]["date"];
+    let most_recent_url = 'https://epic.gsfc.nasa.gov/api/enhanced/date/' + most_recent_date + '?api_key=' + nasa_api;
+    const most_recent_pic = await axios({
+        method: 'get',
+        url: most_recent_url,
+        withCredentials: false,
+    });
+    const $earth_pic = $('#daily_earth_pics');
+    if (most_recent_pic.data.length != 0) {
+        $earth_pic.append(recentEarthPic(most_recent_pic.data[0]));
+        count++;
+    }
+}
 // PEOPLE IN SPACE + ISS LOCATION
     // const astronauts = await axios({
     //     method: 'get',
@@ -186,40 +219,7 @@ export async function loadHomePage() {
     const $iss_pos = $('#iss_location');
     $iss_pos.append(appendISSPosition(iss.data["iss_position"]));
 
-// MAAS2 API
-    const curiosity = await axios({
-        method: 'get',
-        url: 'https://api.maas2.apollorion.com/',
-        withCredentials: false,
-    });
-    const $rover = $('#rover_cont');
-    $rover.prepend(curiosityRoverWeather(curiosity.data));
 
-// NASA EPIC
-    const recent_dates = await axios({
-        method: 'get',
-        url: 'https://epic.gsfc.nasa.gov/api/natural/all?api_key=0Iqc0NH37zWuGrCjtWhnCqO3U5fOOLNWA5bFFHyV',
-        withCredentials: false,
-});
- 
-    let count = 0;
-    for (let i=0; i<recent_dates.data.length; i++) {
-        if (count == 4) {
-            break;
-        }
-        let most_recent_date = recent_dates.data[i]["date"];
-        let most_recent_url = 'https://epic.gsfc.nasa.gov/api/enhanced/date/' + most_recent_date + '?api_key=' + nasa_api;
-        const most_recent_pic = await axios({
-            method: 'get',
-            url: most_recent_url,
-            withCredentials: false,
-        });
-        const $earth_pic = $('#daily_earth_pics');
-        if (most_recent_pic.data.length != 0) {
-            $earth_pic.append(recentEarthPic(most_recent_pic.data[0]));
-            count++;
-        }
-    }
 };
 
 $(function() {
