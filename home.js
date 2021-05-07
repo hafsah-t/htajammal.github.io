@@ -143,7 +143,14 @@ export async function loadHomePage() {
     } else {
         $potd.append(renderPOTD(potd_data));
     }
-
+// ISS LOCATION API
+    const iss = await axios({
+        method: 'get',
+        url: 'https://api.wheretheiss.at/v1/satellites/25544',
+        withCredentials: false,
+    });
+    const $iss_pos = $('#iss_location');
+    $iss_pos.append(appendISSPosition(iss.data));
 
 //Spaceflight News API
     const articles = await axios({
@@ -197,7 +204,7 @@ for (let i=0; i<recent_dates.data.length; i++) {
         count++;
     }
 }
-// PEOPLE IN SPACE + ISS LOCATION
+// PEOPLE IN SPACE 
     // const astronauts = await axios({
     //     method: 'get',
     //     url: 'http://api.open-notify.org/astros.json',
@@ -211,13 +218,7 @@ for (let i=0; i<recent_dates.data.length; i++) {
     //     }
     // }
 
-    const iss = await axios({
-        method: 'get',
-        url: 'https://api.wheretheiss.at/v1/satellites/25544',
-        withCredentials: false,
-    });
-    const $iss_pos = $('#iss_location');
-    $iss_pos.append(appendISSPosition(iss.data));
+    
 
 
 };
