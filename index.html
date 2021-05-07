@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All About Space</title>
+    <link rel="stylesheet" href="styling/bulma.css">
+</head>
+<body id="homepage">
+  
+  <div class="section">
+    <div class="container" id="nav_bar">
+      <a id="nav_link" href="index.html">Home</a>
+      <a id="nav_link" href="fp_view.html">Let's Play a Game</a>
+      <a id="nav_link" href="media.html">So You Like Space...</a>
+      <a id="nav_link" href="plan.html">Learn About Planets</a>
+    </div>
+  </div>
+
+  <h1 id="news_head">Check out NASA's Picture (or Video) of the Day:</h1><br>
+  <div class="container" id="potd_sec">
+    <div class="flex-container" id="appendPOTD">
+      
+    </div>
+  </div><br>
+
+  <h1 id="news_head">International Space Station (ISS) Updates:</h1><br>
+  <div class="container" id="iss_sec">
+    <div class="flex-container" id="appendISS">
+      <div class="flex-child" id="iss_people">
+        <h2>Current Astronauts on the ISS:</h2><br>
+        <ul id="astronauts_list">
+
+        </ul>
+      </div>
+      <div class="flex-child" id="iss_image">
+        <img id="iss_pic" src="fp_backgrounds/iss.jpg" alt="ISS">
+      </div>
+      <div class="flex-child" id="iss_location">
+        <h2>Current Location of the ISS:</h2><br>
+
+      </div>
+    </div>
+  </div><br>
+
+  <h1 id="news_head">Checking in with Curiosity:</h1><br>
+  <div class="container" id="rover_sec">
+    <div class="flex-container" id="rover_cont">
+        <div class="flex-child" id="rover_img">
+          <img id="cur_rover" src="fp_backgrounds/curiosity_rover.jpg" alt="curiosity">
+        </div>
+    </div>
+  </div><br>
+
+  <div class="container" id="space_news">
+    <h1 id="news_head">Stay up to date on the latest news about space:</h1><br>
+    <div class="flex-container" id="news1">
+      
+    </div>
+  </div><br>
+
+  <h1 id="news_head">Images from EPIC: DSCOVR's Earth Polychromatic Imaging Camera</h1><br>
+  <div class="container" id="earth_pics_sec">
+    <div class="flex-container" id="daily_earth_pics">
+      
+    </div>
+
+  </div><br><br>
+
+
+    <script src="misc_files/jquery.js"></script>
+    <script src="misc_files/axios.js"></script>
+    <script src="home.js" type="module"></script>
+</body>
+</html>

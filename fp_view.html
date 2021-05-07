@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet Memory Game</title>
+    <link rel="stylesheet" href="styling/bulma.css">
+</head>
+<body id="gamepage">
+    <div class="section">
+        <div class="container" id="nav_bar">
+          <a id="nav_link" href="index.html">Home</a>
+          <a id="nav_link" href="fp_view.html">Let's Play a Game</a>
+          <a id="nav_link" href="media.html">So You Like Space...</a>
+          <a id="nav_link" href="plan.html">Learn About Planets</a>
+        </div>
+      </div>
+    <div class="container">
+        <div class="flex-container">
+            <div id="game_append" class="flex-child">
+
+            </div>
+            
+            <div class="flex-child">
+                <h1 id="game_title">Planet Memory</h1>
+
+                <div class="container" id="button_bar">
+                    <p id="difficulty">Difficulty: </p>
+                    <button class="media_button" id="easymode">Easy</button>&nbsp;&nbsp;&nbsp;
+                    <button class="media_button" id="mediummode">Medium</button>&nbsp;&nbsp;&nbsp;
+                    <button class="media_button" id="hardmode">Hard</button> 
+                </div>
+                <p id="numtries">Tries: 0</p>
+
+                <p id="game_instr">
+                    Click on a tile to reveal a planet, 
+                    then find the matching picture!
+                    Match the whole board in the fewest tries possible.
+                    The game starts out on medium difficulty, but try out
+                    the easy and hard modes. Have fun!
+                </p><br><br><br><br><br>
+                <div id="reset">
+                    <button id="reset_button">Reset Board</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="section" >
+        
+    </div>
+
+   
+    <script src="misc_files/jquery.js"></script>
+    <script src="misc_files/axios.js"></script>
+    <script src="fp_controller.js" type="module"></script>
+</body>
+</html>
