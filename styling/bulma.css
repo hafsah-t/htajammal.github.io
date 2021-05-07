@@ -11807,6 +11807,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 #iss_image {
   padding-top: 30px;
   padding-bottom: 30px;
+  padding-left: 30px;
 }
 #iss_location {
   text-align: center;
