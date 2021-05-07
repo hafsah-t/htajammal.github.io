@@ -125,7 +125,6 @@ export const appendISSPosition = function(position) {
                 <th class="rover_header">Latitude</th>
             </tr>
             <tr>
-    let lon_round = long.toFixed(2);
                 <td>${lon_round}°</td>
                 <td>${lat_round}°</td>
             </tr>
