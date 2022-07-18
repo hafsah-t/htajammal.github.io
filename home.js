@@ -159,7 +159,7 @@ export async function loadHomePage() {
 //Spaceflight News API
     const articles = await axios({
         method: 'get',
-        url: 'https://spaceflightnewsapi.net/api/v2/articles',
+        url: 'https://api.spaceflightnewsapi.net/v3/articles?_limit=20',
         withCredentials: false,
     });
     const $news1 = $('#news1'); 
@@ -169,10 +169,12 @@ export async function loadHomePage() {
         if (appended == 3) {
             break;
         }
-        if (articles.data[i]["newsSite"] == 'SpaceNews') {
-            $news1.append(newsArticlesAPI(articles.data[i]));
-            appended++;
-        }
+        $news1.append(newsArticlesAPI(articles.data[i]));
+        appended++;
+        // if (articles.data[i]["newsSite"] == 'SpaceNews') {
+        //     $news1.append(newsArticlesAPI(articles.data[i]));
+        //     appended++;
+        // }
     }
 // MAAS2 API
 const curiosity = await axios({
