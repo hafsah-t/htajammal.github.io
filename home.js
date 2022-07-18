@@ -166,7 +166,7 @@ export async function loadHomePage() {
 
     let appended = 0;
     for (let i=0; i<articles.data.length; i++) {
-        if (appended == 3) {
+        if (appended == 4) {
             break;
         }
         $news1.append(newsArticlesAPI(articles.data[i]));
